@@ -8,13 +8,17 @@
     width:166px;
     height:auto;
   }
+  .headerButtons {
+    display:flex;
+    gap:20px;
+  }
   .headerButton {
     background: none;
     background-color: transparent;
     border: none;
-    padding: 0 10px;
     color: white;
     cursor: pointer;
     font-weight: 500;
     line-height:32px;
+    font-size:19px;
   }

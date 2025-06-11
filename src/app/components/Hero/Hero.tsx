@@ -1,15 +1,17 @@
 import styles from "./Hero.module.css";
+import TestButton from "../Button/TestButton";
 function Hero() {
     return (
         <>
             <section className={styles.hero}>
-                <div className={styles.heroButton}>
-                    <p>
+                <div className={styles.heroMain}>
+                    <p className={styles.titleText}>
                         общайтесь работайте достигайте 
                     </p>
-                    <button>
-                        потестим
-                    </button>
+                    <p className={styles.mobileText}>
+                    Covo — это платформа, сочетающая мощь искусственного интеллекта с человеческим подходом. Его цель — улучшение продуктивности и социального взаимодействия в компаниях.<br/><br/> Большинство интранет-платформ сконцентрированы на новостях и дашбордах задач, но не обеспечивают обратную связь и вовлечённость. Однако, интранет может быть социальной сетью, стимулирующей командную работу и улучшающей климат в компании.
+                    </p>
+                    <TestButton />
                 </div>
                 <div className={styles.heroText}>
                     <p>

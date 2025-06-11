@@ -1,0 +1,40 @@
+.testButton {
+    width: 284px;
+    height: 54px;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size:19px;
+    letter-spacing: 0.1em;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    border:none;
+    overflow-y: hidden;
+}
+
+.testButton::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(45deg, #8CCBFB, #BAFFC9);
+    border-radius: 16px;
+    z-index: -1;
+}
+
+.testButton::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background-color: #212121;
+    border-radius: 15px;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.testButton:hover::after {
+    background-color: #212121;
+    box-shadow: inset -2px 2px 3px 0 rgba(186, 255, 201, 0.9); /* #BAFFC9E5 with 90% opacity */
+}
+

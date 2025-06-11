@@ -1,37 +1,70 @@
 .hero {
     display:flex;
     justify-content: space-between;
-    align-self:center;
     color:white;
-    max-width:1024px;
+    max-width:1054px;
+    width: 100%;
+    margin-top: 87px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    
+
+    
 }
 .heroText {
-    min-width: 467px;
     flex:1;
+    max-width: 467px;
+    margin-top: 98px;
 }
 .heroText p {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 0.02em;
+    color: #D8D8D8;
+    line-height: 150%;
 }
-.heroButton {
-    flex:1;
+.heroMain {
     display:flex;
     flex-direction: column;
     gap:131px;
+    flex:1
+    
 }
 
-.heroButton p {
+.titleText {
+    width: 363px;
     font-size: 60px;
     font-weight: 600;
     line-height: 65px;
+    overflow-y: hidden;
+    
 }
-.heroButton button {
-    width:284px;
-    height: 54px;
-    border-radius:18px;
-    background-color: #212121;
-    color:white;
+.mobileText {
+    display: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #D8D8D8;
+    line-height: 150%;
+    max-width:420px;
+    text-align: center;
 }
 
+@media screen and (max-width:800px) {
+    .heroText {
+        display:none;
+    }
+    .mobileText {
+        display:block;
+    }
+    .heroMain {
+        gap:30px;
+        align-items: center;
+    }
+    .titleText{
+        font-size:50px;
+        text-align: center;
+    }
+    .hero {
+        margin-top:50px;
+    }
+    
+}
