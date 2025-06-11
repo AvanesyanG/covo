@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    width: 100dvw;
+  }
+  .logo {
+    width:166px;
+    height:auto;
+  }
+  .headerButton {
+    background: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    line-height:32px;
+  }
