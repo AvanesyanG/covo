@@ -1,0 +1,273 @@
+.form {
+    max-width:1054px;
+    width: 100%;
+    color:white;
+    padding: 0 15px;
+    margin-bottom: 70px;
+}
+.header {
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 120%;
+    letter-spacing: 0.1em;
+    color: white;
+    margin-bottom: 45px;
+}
+.note {
+    font-weight: 400;
+    font-size:17px;
+    line-height: 150%;
+    color: #6D6D6D;
+    margin-bottom: 105px;
+}
+.formContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 43px;
+    flex: 1;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    color: white;
+    font-size: 14px;
+}
+
+.input {
+    padding: 15px;
+    border: 1px solid #BAFFC9;
+    border-radius: 16px;
+    background: transparent;
+    color: white;
+    font-size: 19px;
+    width: 100%;
+}
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+    -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0 30px #03030E inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: white;
+    font-size: 19px !important;
+}
+.input:-moz-autofill {
+    background-color: #03030E !important;
+    color: white !important;
+    font-size: 19px !important;
+}
+.input:-ms-input-placeholder {
+    color: #6D6D6D;
+    font-size: 19px;
+}
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #BAFFC9;
+}
+
+.input::placeholder {
+    color: #6D6D6D;
+    font-size: 19px;
+}
+
+.textarea {
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 16px;
+    background: transparent;
+    color: white;
+    font-size: 19px;
+    width: 100%;
+    height: 173px;
+    resize: none;
+}
+
+.textarea::placeholder {
+    color: #6D6D6D;
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox {
+    width: 24px;
+    height: 24px;
+    accent-color: #BAFFC9;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 1);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    position: relative;
+}
+.checkbox:checked {
+    background: #BAFFC9;
+    border-color: #BAFFC9;
+}
+.checkbox:checked::before {
+    content: '✓';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 14px;
+    line-height: 1;
+    display: block;
+}
+
+
+.checkboxLabel {
+    color: white;
+    font-size: 14px;
+    line-height: 120%;
+    margin-left:5px;
+}
+
+.submitButton {
+    max-width: 466px;
+    height: 54px;
+    border-radius: 16px;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 0.1em;
+    color: #6D6D6D;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    border: none;
+    overflow-y: hidden;
+    background: #404040;
+}
+
+.submitButton::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(45deg, #8CCBFB, #BAFFC9);
+    border-radius: 16px;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.submitButton::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background-color: #212121;
+    border-radius: 15px;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.submitButtonActive {
+    color: white;
+    cursor: pointer;
+}
+
+.submitButtonActive::before {
+    opacity: 1;
+}
+
+.submitButtonActive::after {
+    background-color: #212121;
+}
+
+.submitButtonActive:hover::after {
+    box-shadow: inset -2px 2px 3px 0 rgba(186, 255, 201, 0.9);
+}
+
+.submitButton:focus {
+    outline: none;
+}
+
+.footer {
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: rgba(109, 109, 109, 1)
+}
+.footerLinks {
+    line-height: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+    .header {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .note {
+        font-size: 13px;
+        margin-bottom: 60px;
+    }
+    .formContainer {
+        flex-direction: column;
+    }
+    
+    .leftColumn,
+    .rightColumn {
+        width: 100%;
+    }
+    .footer {
+        flex-direction: column;
+        gap:20px;
+    }
+    .input::placeholder {
+        font-size: 14px;
+    }
+
+    .textarea::placeholder {
+        font-size: 14px;
+    }
+    .checkboxLabel {
+        font-size: 13px;
+    }
+    .leftColumn {
+        gap: 20px;
+    }
+    .rightColumn {
+        gap: 20px;
+    }
+    .footer {
+        font-size: 14px;
+    }
+    
+}
+
+/* Custom toast styles */

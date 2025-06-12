@@ -3,7 +3,7 @@ import styles from "./Services.module.css"
 function Services () {
     return (
         <section className={styles.services}>
-            <p>функционал</p>
+            <p className={styles.header}>функционал</p>
             <div className={styles.sectionTitle}>
                 <p>01</p>
                 <p>личная страница сотрудника</p>

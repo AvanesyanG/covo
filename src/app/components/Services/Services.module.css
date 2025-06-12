@@ -7,7 +7,7 @@
     color:white;
     padding: 0 15px;
 }
-.services > p{
+.header{
     font-weight: 500;
     font-size: 19px;
     line-height:120%;
@@ -25,6 +25,7 @@
     margin-bottom:47px;
 }
 .sectionTitle p:nth-child(2){
+    max-width: 590px;
     font-size: 60px;
     font-weight: 600;
     line-height: 65px;
@@ -53,3 +54,37 @@
     gap: 2rem;
 }
 
+.alignRight {
+    margin-top: 80px;
+  }
+
+
+  @media screen and (max-width:800px) {
+    .header{
+        font-size:14px;
+    }
+    .services{
+        margin-top:100px;
+    }
+    .sectionTitle p:nth-child(2){
+        font-size:50px;
+    }
+    .itemTitle{
+        font-size:19px;
+        margin-top:24.5px;
+        margin-bottom:32px;
+    }
+    .itemDesc {
+        font-size:14px;
+    }
+    .grid img {
+        width:130px;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+        gap:4rem;
+    }
+    .alignRight {
+        margin-top:0
+    }
+  }
