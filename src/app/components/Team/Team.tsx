@@ -1,35 +1,32 @@
 'use client';
 
 import styles from './Team.module.css';
+import { useTranslations } from 'next-intl';
 
 function Team() {
+    const t = useTranslations("Team");
+
+    const renderTeamMember = (memberKey: 'salavat' | 'mark', isRight: boolean = false) => (
+        <div className={`${styles.teamMemberContent} ${isRight ? styles.teamMemberRight : ''}`}>
+            <p className={styles.description}>
+                {t(`members.${memberKey}.description`)}
+            </p>
+            <div className={styles.teamMember}>
+                <img src="/teamIcon.png" alt="" />
+                <div>
+                    <p className={styles.name}>{t(`members.${memberKey}.name`)}</p>
+                    <p className={styles.position}>{t(`members.${memberKey}.position`)}</p>
+                </div>
+            </div>
+        </div>
+    );
+
     return (
         <section className={styles.team}>
-            <p className={styles.header}>команда</p>
+            <p className={styles.header}>{t('title')}</p>
             <div className={styles.teamContent}>
-                <div className={styles.teamMemberContent}>
-                    <p className={styles.description}>В пособии подробно описываются методические приёмы, лежащие в основе анализа философского текста. Эти приёмы не только описываются, но и подробно иллюстрируются на большом количестве примеров. Даётся пошаговый анализ каждого</p>
-                    <div className={styles.teamMember}>
-                            <img src="/teamIcon.png" alt="" />
-                            <div>
-                                <p className={styles.name}>Салават Деникаев </p>
-                                <p className={styles.position}>CPO</p>
-                            </div>
-                            
-                    </div>
-                </div>
-                <div className={`${styles.teamMemberContent} ${styles.teamMemberRight}`}>
-                    <p className={styles.description}>Даётся пошаговый анализ каждого приёма. В пособии подробно описываются методические приёмы, лежащие в основе анализа философского текста. Эти приёмы не только описываются, но и подробно иллюстрируются на большом</p>
-                    <div className={styles.teamMember}>
-                            <img src="/teamIcon.png" alt="" />
-                            <div>
-                                <p>Марк Тамм</p>
-                            <p>CTO</p>
-                            </div>
-                            
-                    </div>
-
-                </div>
+                {renderTeamMember('salavat')}
+                {renderTeamMember('mark', true)}
             </div>
         </section>
     );

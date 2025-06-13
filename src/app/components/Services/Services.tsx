@@ -1,87 +1,48 @@
+"use client";
+
 import styles from "./Services.module.css"
+import { useTranslations } from "next-intl";
 
 function Services () {
+    const t = useTranslations("Services");
+    
+    const renderSection = (sectionKey: 'employee' | 'news' | 'booking') => (
+        <>
+            <div className={styles.sectionTitle}>
+                <p>{t(`sections.${sectionKey}.number`)}</p>
+                <p>{t(`sections.${sectionKey}.title`)}</p>
+            </div>
+            <div className={styles.grid}>
+                <div className={`${styles.serviceItem} ${styles.alignLeft}`}>
+                    <img src="/img1.svg" alt="img1" />
+                    <p className={styles.itemTitle}>{t(`sections.${sectionKey}.items.profile.title`)}</p>
+                    <p className={styles.itemDesc}>{t(`sections.${sectionKey}.items.profile.description`)}</p>
+                </div>
+                <div className={`${styles.serviceItem} ${styles.alignRight}`}>
+                    <img src="/img2.svg" alt="img2" />
+                    <p className={styles.itemTitle}>{t(`sections.${sectionKey}.items.calendar.title`)}</p>
+                    <p className={styles.itemDesc}>{t(`sections.${sectionKey}.items.calendar.description`)}</p>
+                </div>
+                <div className={`${styles.serviceItem} ${styles.alignLeft}`}>
+                    <img src="/img3.svg" alt="img3" />
+                    <p className={styles.itemTitle}>{t(`sections.${sectionKey}.items.awards.title`)}</p>
+                    <p className={styles.itemDesc}>{t(`sections.${sectionKey}.items.awards.description`)}</p>
+                </div>
+                <div className={`${styles.serviceItem} ${styles.alignRight}`}>
+                    <img src="/img4.svg" alt="img4" />
+                    <p className={styles.itemTitle}>{t(`sections.${sectionKey}.items.integration.title`)}</p>
+                    <p className={styles.itemDesc}>{t(`sections.${sectionKey}.items.integration.description`)}</p>
+                </div>
+            </div>
+        </>
+    );
+
     return (
         <section className={styles.services}>
-            <p className={styles.header}>функционал</p>
-            <div className={styles.sectionTitle}>
-                <p>01</p>
-                <p>личная страница сотрудника</p>
-            </div>
-            <div className={styles.grid}>
-                <div className={`${styles.serviceItem} ${styles.alignLeft}`}>
-                    <img src="/img1.svg" alt="img1" />
-                    <p className={styles.itemTitle}>профиль</p>
-                    <p className={styles.itemDesc}>детальная информация, включающая стаж, личные увлечения и профессиональные навыки. это создает полное представление о сотруднике в компании</p>
-                </div>
-                <div className={`${styles.serviceItem} ${styles.alignRight}`}>
-                    <img src="/img2.svg" alt="img2" />
-                    <p className={styles.itemTitle}>календарь сотрудника</p>
-                    <p className={styles.itemDesc}>удобный инструмент для просмотра занятости и быстрого бронирования встреч в пару кликов</p>
-                </div>
-                <div className={`${styles.serviceItem} ${styles.alignLeft}`}>
-                    <img src="/img3.svg" alt="img3" />
-                    <p className={styles.itemTitle}>блок с наградами и благодарностями</p>
-                    <p className={styles.itemDesc}>легкий способ выразить признательность. сотрудники могут видеть свои достижения и получать благодарности от коллег</p>
-                </div>
-                <div className={`${styles.serviceItem} ${styles.alignRight}`}>
-                    <img src="/img4.svg" alt="img4" />
-                    <p className={styles.itemTitle}>интеграция с кадровой системой</p>
-                    <p className={styles.itemDesc}>автоматическое обновление данных, включая изменения должности, контактов и рабочих достижений</p>
-                </div>
-            </div>
-            <div className={styles.sectionTitle}>
-                <p>02</p>
-                <p>лента новостей сообщества мероприятия</p>
-            </div>
-            <div className={styles.grid}>
-                <div className={`${styles.serviceItem} ${styles.alignLeft}`}>
-                    <img src="/img1.svg" alt="img1" />
-                    <p className={styles.itemTitle}>профиль</p>
-                    <p className={styles.itemDesc}>детальная информация, включающая стаж, личные увлечения и профессиональные навыки. это создает полное представление о сотруднике в компании</p>
-                </div>
-                <div className={`${styles.serviceItem} ${styles.alignRight}`}>
-                    <img src="/img2.svg" alt="img2" />
-                    <p className={styles.itemTitle}>календарь сотрудника</p>
-                    <p className={styles.itemDesc}>удобный инструмент для просмотра занятости и быстрого бронирования встреч в пару кликов</p>
-                </div>
-                <div className={`${styles.serviceItem} ${styles.alignLeft}`}>
-                    <img src="/img3.svg" alt="img3" />
-                    <p className={styles.itemTitle}>блок с наградами и благодарностями</p>
-                    <p className={styles.itemDesc}>легкий способ выразить признательность. сотрудники могут видеть свои достижения и получать благодарности от коллег</p>
-                </div>
-                <div className={`${styles.serviceItem} ${styles.alignRight}`}>
-                    <img src="/img4.svg" alt="img4" />
-                    <p className={styles.itemTitle}>интеграция с кадровой системой</p>
-                    <p className={styles.itemDesc}>автоматическое обновление данных, включая изменения должности, контактов и рабочих достижений</p>
-                </div>
-            </div>
-            <div className={styles.sectionTitle}>
-                <p>03</p>
-                <p>бронирование</p>
-            </div>
-            <div className={styles.grid}>
-                <div className={`${styles.serviceItem} ${styles.alignLeft}`}>
-                    <img src="/img1.svg" alt="img1" />
-                    <p className={styles.itemTitle}>профиль</p>
-                    <p className={styles.itemDesc}>детальная информация, включающая стаж, личные увлечения и профессиональные навыки. это создает полное представление о сотруднике в компании</p>
-                </div>
-                <div className={`${styles.serviceItem} ${styles.alignRight}`}>
-                    <img src="/img2.svg" alt="img2" />
-                    <p className={styles.itemTitle}>календарь сотрудника</p>
-                    <p className={styles.itemDesc}>удобный инструмент для просмотра занятости и быстрого бронирования встреч в пару кликов</p>
-                </div>
-                <div className={`${styles.serviceItem} ${styles.alignLeft}`}>
-                    <img src="/img3.svg" alt="img3" />
-                    <p className={styles.itemTitle}>блок с наградами и благодарностями</p>
-                    <p className={styles.itemDesc}>легкий способ выразить признательность. сотрудники могут видеть свои достижения и получать благодарности от коллег</p>
-                </div>
-                <div className={`${styles.serviceItem} ${styles.alignRight}`}>
-                    <img src="/img4.svg" alt="img4" />
-                    <p className={styles.itemTitle}>интеграция с кадровой системой</p>
-                    <p className={styles.itemDesc}>автоматическое обновление данных, включая изменения должности, контактов и рабочих достижений</p>
-                </div>
-            </div>
+            <p className={styles.header}>{t('title')}</p>
+            {renderSection('employee')}
+            {renderSection('news')}
+            {renderSection('booking')}
         </section>
     )
 }

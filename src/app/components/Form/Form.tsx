@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import styles from './Form.module.css';
+import { useTranslations } from 'next-intl';
 
 function Form() {
+    const t = useTranslations("Form");
     const [isFormValid, setIsFormValid] = useState(false);
     const [formData, setFormData] = useState({
         name: '',
@@ -48,8 +50,8 @@ function Form() {
         
         <section className={styles.form}>
             <div>
-                <h2 className={styles.header}>форма обратной связи</h2>
-                <p className={styles.note}>пожалуйста, заполните все выделенные цветом поля</p>
+                <h2 className={styles.header}>{t('title')}</h2>
+                <p className={styles.note}>{t('note')}</p>
             </div>
             <form className={styles.formContainer} onSubmit={(e) => e.preventDefault()}>
                 <div className={styles.leftColumn}>
@@ -58,7 +60,7 @@ function Form() {
                             type="text" 
                             id="name"
                             name="name"
-                            placeholder="имя" 
+                            placeholder={t('fields.name')}
                             className={styles.input}
                             value={formData.name}
                             required
@@ -70,7 +72,7 @@ function Form() {
                             type="text" 
                             id="company"
                             name="company"
-                            placeholder="компания" 
+                            placeholder={t('fields.company')}
                             className={styles.input}
                             required
                             value={formData.company}
@@ -82,7 +84,7 @@ function Form() {
                             type="email" 
                             id="email"
                             name="email"
-                            placeholder="e-mail" 
+                            placeholder={t('fields.email')}
                             className={styles.input}
                             required
                             value={formData.email}
@@ -94,7 +96,7 @@ function Form() {
                             type="tel" 
                             id="phone"
                             name="phone"
-                            placeholder="+7" 
+                            placeholder={t('fields.phone')}
                             className={styles.input}
                             required
                             value={formData.phone}
@@ -107,7 +109,7 @@ function Form() {
                         <textarea 
                             id="message"
                             name="message"
-                            placeholder="сообщение" 
+                            placeholder={t('fields.message')}
                             className={styles.textarea}
                             value={formData.message}
                             onChange={handleInputChange}
@@ -124,23 +126,22 @@ function Form() {
                             onChange={handleInputChange}
                         />
                         <label htmlFor="consent" className={styles.checkboxLabel}>
-                            Даю согласие на обработку персональных данных
+                            {t('consent')}
                         </label>
                     </div>
                     <button 
                         type="submit" 
                         className={`${styles.submitButton} ${isFormValid ? styles.submitButtonActive : ''}`}
-                        
                     >
-                        отправить
+                        {t('submit')}
                     </button>
                 </div>
             </form>
             <div className={styles.footer}>
-                <p>© 2024 COVO. Все права защищены</p>
+                <p>{t('footer.copyright')}</p>
                 <div className={styles.footerLinks}>
-                    <p>Политика обработки персональных данных</p>
-                    <p>Cookies</p>
+                    <p>{t('footer.privacy')}</p>
+                    <p>{t('footer.cookies')}</p>
                 </div>
             </div>  
         </section>

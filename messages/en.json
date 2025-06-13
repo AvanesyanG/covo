@@ -1,0 +1,134 @@
+{
+    "Hero": {
+      "title": "connect work achieve",
+      "description": "Covo is a platform that combines the power of artificial intelligence with a human approach. Its goal is to improve productivity and social interaction in companies.\n\nMost intranet platforms focus on news and task dashboards but don't provide feedback and engagement. However, an intranet can be a social network that stimulates teamwork and improves company climate.",
+      "buttonText": "let's test!"
+    },
+    "Advantages": {
+        "title": "advantages",
+        "items": {
+          "design": "modern design and user-friendly interface",
+          "customization": "flexible customization for your company's needs",
+          "integration": "integration with company services",
+          "communication": "improved communication between employees",
+          "monitoring": "AI-powered monitoring of employee engagement and sentiment"
+        }
+      },
+    "Services": {
+      "title": "functionality",
+      "sections": {
+        "employee": {
+          "number": "01",
+          "title": "employee personal page",
+          "items": {
+            "profile": {
+              "title": "profile",
+              "description": "detailed information including experience, personal interests, and professional skills. this creates a complete picture of the employee in the company"
+            },
+            "calendar": {
+              "title": "employee calendar",
+              "description": "convenient tool for viewing availability and quick meeting booking in just a few clicks"
+            },
+            "awards": {
+              "title": "awards and recognition block",
+              "description": "easy way to express appreciation. employees can see their achievements and receive gratitude from colleagues"
+            },
+            "integration": {
+              "title": "HR system integration",
+              "description": "automatic data updates, including position changes, contacts, and work achievements"
+            }
+          }
+        },
+        "news": {
+          "number": "02",
+          "title": "community news feed events",
+          "items": {
+            "profile": {
+              "title": "profile",
+              "description": "detailed information including experience, personal interests, and professional skills. this creates a complete picture of the employee in the company"
+            },
+            "calendar": {
+              "title": "employee calendar",
+              "description": "convenient tool for viewing availability and quick meeting booking in just a few clicks"
+            },
+            "awards": {
+              "title": "awards and recognition block",
+              "description": "easy way to express appreciation. employees can see their achievements and receive gratitude from colleagues"
+            },
+            "integration": {
+              "title": "HR system integration",
+              "description": "automatic data updates, including position changes, contacts, and work achievements"
+            }
+          }
+        },
+        "booking": {
+          "number": "03",
+          "title": "booking",
+          "items": {
+            "profile": {
+              "title": "profile",
+              "description": "detailed information including experience, personal interests, and professional skills. this creates a complete picture of the employee in the company"
+            },
+            "calendar": {
+              "title": "employee calendar",
+              "description": "convenient tool for viewing availability and quick meeting booking in just a few clicks"
+            },
+            "awards": {
+              "title": "awards and recognition block",
+              "description": "easy way to express appreciation. employees can see their achievements and receive gratitude from colleagues"
+            },
+            "integration": {
+              "title": "HR system integration",
+              "description": "automatic data updates, including position changes, contacts, and work achievements"
+            }
+          }
+        }
+      }
+    },
+    "Roadmap": {
+      "title": "roadmap",
+      "items": {
+        "employee": "employee personal account, profile",
+        "news": "news feed and communities",
+        "booking": "booking",
+        "integration": "email and calendar integration",
+        "storage": "cloud storage for files",
+        "documents": "document and certificate requests",
+        "monitoring": "AI-powered employee sentiment monitoring",
+        "salary": "salary slip viewing"
+      }
+    },
+    "Team": {
+      "title": "team",
+      "members": {
+        "salavat": {
+          "description": "The manual describes in detail the methodological techniques underlying the analysis of philosophical text. These techniques are not only described but also illustrated in detail with numerous examples. A step-by-step analysis of each is provided",
+          "name": "Salavat Denikaev",
+          "position": "CPO"
+        },
+        "mark": {
+          "description": "A step-by-step analysis of each technique is provided. The manual describes in detail the methodological techniques underlying the analysis of philosophical text. These techniques are not only described but also illustrated in detail",
+          "name": "Mark Tamm",
+          "position": "CTO"
+        }
+      }
+    },
+    "Form": {
+      "title": "feedback form",
+      "note": "please fill in all highlighted fields",
+      "fields": {
+        "name": "name",
+        "company": "company",
+        "email": "e-mail",
+        "phone": "+1",
+        "message": "message"
+      },
+      "consent": "I consent to the processing of personal data",
+      "submit": "send",
+      "footer": {
+        "copyright": "© 2024 COVO. All rights reserved",
+        "privacy": "Privacy Policy",
+        "cookies": "Cookies"
+      }
+    }
+  }

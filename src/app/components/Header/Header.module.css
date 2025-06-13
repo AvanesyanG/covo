@@ -21,4 +21,8 @@
     font-weight: 500;
     line-height:32px;
     font-size:19px;
+    transition: color 0.3s ease;
+  }
+  .headerButton.active {
+    color: #BAFFC9;
   }

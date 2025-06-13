@@ -15,12 +15,14 @@
     flex:1;
     max-width: 467px;
     margin-top: 98px;
+    min-height: 342px;
 }
 .heroText p {
     font-size: 19px;
     font-weight: 400;
     color: #D8D8D8;
     line-height: 150%;
+    min-height: 342px;
 }
 .heroMain {
     display:flex;
