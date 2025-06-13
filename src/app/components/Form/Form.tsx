@@ -5,7 +5,6 @@ import styles from './Form.module.css';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
-
 function Form() {
     const pathname = usePathname();
     const locale = pathname.split('/')[1];
@@ -19,14 +18,12 @@ function Form() {
         message: '',
         consent: false
     });
-    const isValidEmail = (email: string) => {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    };
+    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+    const [errorMsg, setErrorMsg] = useState('');
 
-    // Function to validate phone (basic validation)
-    const isValidPhone = (phone: string) => {
-        return /^\+?[\d\s-]{10,}$/.test(phone);
-    };
+    const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const isValidPhone = (phone: string) => /^\+?[\d\s-]{10,}$/.test(phone);
+
     useEffect(() => {
         const isNameValid = formData.name.trim().length > 0;
         const isCompanyValid = formData.company.trim().length > 0;
@@ -50,14 +47,46 @@ function Form() {
             [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
         }));
     };
+
+    // NEW: Submit handler
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus('sending');
+        setErrorMsg('');
+        try {
+            const res = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+            const result = await res.json();
+            if (result.success) {
+                setStatus('success');
+                setFormData({
+                    name: '',
+                    company: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                    consent: false
+                });
+            } else {
+                setStatus('error');
+                setErrorMsg(result.error || 'Unknown error');
+            }
+        } catch (err: any) {
+            setStatus('error');
+            setErrorMsg(err.message || 'Unknown error');
+        }
+    };
+
     return (
-        
         <section className={styles.form}>
             <div>
                 <h2 className={styles.header}>{t('title')}</h2>
                 <p className={styles.note}>{t('note')}</p>
             </div>
-            <form className={styles.formContainer} onSubmit={(e) => e.preventDefault()}>
+            <form className={styles.formContainer} onSubmit={handleSubmit}>
                 <div className={styles.leftColumn}>
                     <div className={styles.inputGroup}>
                         <input 
@@ -136,9 +165,12 @@ function Form() {
                     <button 
                         type="submit" 
                         className={`${styles.submitButton} ${isFormValid ? styles.submitButtonActive : ''}`}
+                        disabled={!isFormValid || status === 'sending'}
                     >
-                        {t('submit')}
+                        {status === 'sending' ? t('sending') : t('submit')}
                     </button>
+                    {status === 'success' && <p className={styles.successMsg}>{t('success')}</p>}
+                    {status === 'error' && <p className={styles.errorMsg}>{t('error')}: {errorMsg}</p>}
                 </div>
             </form>
             <div className={styles.footer}>
