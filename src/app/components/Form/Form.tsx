@@ -20,6 +20,7 @@ function Form() {
     });
     const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
     const [errorMsg, setErrorMsg] = useState('');
+    const [readyForAnother, setReadyForAnother] = useState(false);
 
     const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const isValidPhone = (phone: string) => /^\+?[\d\s-]{10,}$/.test(phone);
@@ -62,14 +63,7 @@ function Form() {
             const result = await res.json();
             if (result.success) {
                 setStatus('success');
-                setFormData({
-                    name: '',
-                    company: '',
-                    email: '',
-                    phone: '',
-                    message: '',
-                    consent: false
-                });
+                setReadyForAnother(true);
             } else {
                 setStatus('error');
                 setErrorMsg(result.error || 'Unknown error');
@@ -78,6 +72,19 @@ function Form() {
             setStatus('error');
             setErrorMsg(err.message || 'Unknown error');
         }
+    };
+
+    const handleReset = () => {
+        setFormData({
+            name: '',
+            company: '',
+            email: '',
+            phone: '',
+            message: '',
+            consent: false
+        });
+        setStatus('idle');
+        setReadyForAnother(false);
     };
 
     return (
@@ -94,7 +101,7 @@ function Form() {
                             id="name"
                             name="name"
                             placeholder={t('fields.name')}
-                            className={styles.input}
+                            className={`${styles.input} ${formData.name ? styles.filled : ''}`}
                             value={formData.name}
                             required
                             onChange={handleInputChange}
@@ -106,7 +113,7 @@ function Form() {
                             id="company"
                             name="company"
                             placeholder={t('fields.company')}
-                            className={styles.input}
+                            className={`${styles.input} ${formData.company ? styles.filled : ''}`}
                             required
                             value={formData.company}
                             onChange={handleInputChange}
@@ -118,7 +125,7 @@ function Form() {
                             id="email"
                             name="email"
                             placeholder={t('fields.email')}
-                            className={styles.input}
+                            className={`${styles.input} ${formData.email ? styles.filled : ''}`}
                             required
                             value={formData.email}
                             onChange={handleInputChange}
@@ -130,7 +137,7 @@ function Form() {
                             id="phone"
                             name="phone"
                             placeholder={t('fields.phone')}
-                            className={styles.input}
+                            className={`${styles.input} ${formData.phone ? styles.filled : ''}`}
                             required
                             value={formData.phone}
                             onChange={handleInputChange}
@@ -162,14 +169,23 @@ function Form() {
                             {t('consent')}
                         </label>
                     </div>
-                    <button 
-                        type="submit" 
-                        className={`${styles.submitButton} ${isFormValid ? styles.submitButtonActive : ''}`}
-                        disabled={!isFormValid || status === 'sending'}
-                    >
-                        {status === 'sending' ? t('sending') : t('submit')}
-                    </button>
-                    {status === 'success' && <p className={styles.successMsg}>{t('success')}</p>}
+                    {readyForAnother ? (
+                        <button
+                            type="button"
+                            className={`${styles.submitButton} ${styles.submitButtonReady}`}
+                            onClick={handleReset}
+                        >
+                            Готово, ещё?
+                        </button>
+                    ) : (
+                        <button
+                            type="submit"
+                            className={`${styles.submitButton} ${isFormValid ? styles.submitButtonActive : ''}`}
+                            disabled={!isFormValid || status === 'sending'}
+                        >
+                            {status === 'sending' ? t('sending') : t('submit')}
+                        </button>
+                    )}
                     {status === 'error' && <p className={styles.errorMsg}>{t('error')}: {errorMsg}</p>}
                 </div>
             </form>

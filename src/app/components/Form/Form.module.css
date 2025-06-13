@@ -53,6 +53,7 @@
 .input {
     padding: 15px;
     border: 1px solid #BAFFC9;
+    transition:border-color 0.2s;
     border-radius: 16px;
     background: transparent;
     color: white;
@@ -78,10 +79,16 @@
     color: #6D6D6D;
     font-size: 19px;
 }
-.input:focus,
+.input:focus{
+    border-color: white;
+    outline: none;
+}
+.input.filled {
+    border-color: white;
+}
 .textarea:focus {
     outline: none;
-    border-color: #BAFFC9;
+    border-color: white;
 }
 
 .input::placeholder {
@@ -160,9 +167,9 @@
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
+    background: #404040;
     border: none;
     overflow-y: hidden;
-    background: #404040;
 }
 
 .submitButton::before {
@@ -233,8 +240,18 @@
     color: #BAFFC9;
 }
 
+.submitButtonReady {
+    background: rgba(186, 255, 201, 1) !important;
+    border: 2px solid rgba(186, 255, 201, 1) !important;
+    color: rgba(64, 64, 64, 1) !important;
+}
 
-
+.submitButtonReady::before,
+.submitButtonReady::after {
+  background: none !important;
+  border: none !important;
+  content: none !important;
+}
 
 @media screen and (max-width: 800px) {
     .header {
