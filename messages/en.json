@@ -130,5 +130,13 @@
         "privacy": "Privacy Policy",
         "cookies": "Cookies"
       }
-    }
+    },
+    "Privacy": {
+        "title": "Privacy Policy",
+        "content": "This Privacy Policy (hereinafter — the \"Policy\") has been developed in accordance with the requirements of the Federal Law of the Russian Federation \"On Personal Data\" No. 152-FZ dated July 27, 2006, and determines the procedure for processing personal data and measures to ensure the security of personal data taken by [Company/Site Name].\n\n1. General Provisions\n\n1.1. The Operator processes the User's personal data solely for the purpose of fulfilling obligations to the User.\n\n1.2. This Policy applies to all personal data that the Operator receives from the User when using the website [website URL].\n\n2. Purposes of Personal Data Processing\n\n2.1. User identification.\n\n2.2. Provision of services, information, and feedback.\n\n2.3. Compliance with the requirements of the legislation of the Russian Federation.\n\n3. Processed Personal Data\n\n3.1. The Operator processes the following personal data:\n— Full name;\n— Email address;\n— Phone number;\n— IP address;\n— Cookie files;\n— Other data provided by the User.\n\n4. Legal Basis for Personal Data Processing\n\n4.1. Processing of personal data is carried out on the basis of the User's consent or in cases provided for by law.\n\n5. Transfer of Personal Data to Third Parties\n\n5.1. The Operator has the right to transfer personal data to third parties in cases provided for by law.\n\n6. Measures to Protect Personal Data\n\n6.1. The Operator takes necessary legal, organizational, and technical measures to protect the User's personal data.\n\n7. User Rights\n\n7.1. The User has the right to:\n— Receive information about their personal data;\n— Require clarification, blocking, or destruction of personal data;\n— Withdraw consent to the processing of personal data.\n\n8. Contact Information\n\nFor questions related to the processing of personal data, the User can contact the Operator:\n— Email: [specify email]\n— Phone: [specify phone number]"
+      },
+    "Cookies": {
+        "title": "Cookies",
+        "content": "Cookies are small files that are stored on your device when you visit our website. They help us to improve your experience on our website and to personalize your visit. We use cookies to remember your preferences and to track your visits to our website."
+      }
   }

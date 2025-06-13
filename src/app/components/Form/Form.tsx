@@ -3,8 +3,12 @@
 import { useEffect, useState } from 'react';
 import styles from './Form.module.css';
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
+
 
 function Form() {
+    const pathname = usePathname();
+    const locale = pathname.split('/')[1];
     const t = useTranslations("Form");
     const [isFormValid, setIsFormValid] = useState(false);
     const [formData, setFormData] = useState({
@@ -140,10 +144,10 @@ function Form() {
             <div className={styles.footer}>
                 <p>{t('footer.copyright')}</p>
                 <div className={styles.footerLinks}>
-                    <p>{t('footer.privacy')}</p>
-                    <p>{t('footer.cookies')}</p>
-                </div>
-            </div>  
+                    <a href={`/${locale}/privacy`} className={styles.footerLink}>{t('footer.privacy')}</a>
+                    <a href={`/${locale}/cookies`} className={styles.footerLink}>{t('footer.cookies')}</a>
+                </div>  
+            </div>
         </section>
     );
 }

@@ -217,11 +217,20 @@
     color: rgba(109, 109, 109, 1)
 }
 .footerLinks {
+    cursor: pointer;
     line-height: 18px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     
+}
+.footerLink {
+    color: rgba(109, 109, 109, 1);
+    text-decoration: none;
+   
+}
+.footerLink:hover {
+    color: #BAFFC9;
 }
 
 

@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import "./globals.css";
+import "../globals.css";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
 import Advantages from "../components/Advantages/Advantages";
@@ -17,7 +17,9 @@ export default function Home() {
       <Services/>
       <Roadmap />
       <Team />
-      <Form />
+      <section id="contact-form">
+        <Form />
+      </section>
     </main>
   );
 }

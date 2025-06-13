@@ -14,14 +14,25 @@ function Header() {
     // Get the path without the locale prefix
     const pathWithoutLocale = pathname.replace(`/${currentLocale}`, '');
     // Navigate to the same path with the new locale
-    router.push(`/${newLocale}${pathWithoutLocale}`);
+    router.replace(`/${newLocale}${pathWithoutLocale}`);
+  };
+
+  const handleLogoClick = () => {
+    // Simply navigate to the root with current locale
+    router.push(`/${currentLocale}`);
   };
 
   return (
     <>
       <div className={styles.header}>
         <div>
-          <img src="/logo-vs.svg" alt="logo" className={styles.logo} />
+          <img 
+            src="/logo-vs.svg" 
+            alt="logo" 
+            className={styles.logo} 
+            onClick={handleLogoClick}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
         <div className={styles.headerButtons}>
           <button 
