@@ -1,25 +1,39 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import styles from './cookies.module.css';
 import Header from '../../components/Header/Header';
 import { useTranslations } from 'next-intl';
+import { getPolicy } from '../../lib/supabase';
+import { useLocale } from 'next-intl';
 
 export default function Cookies() {
     const t = useTranslations('Cookies');
+    const [policy, setPolicy] = useState<string | null>(null);
+    const locale = useLocale();
+
+    useEffect(() => {
+        const fetchPolicy = async () => {
+            const latestPolicy = await getPolicy('cookies', locale);
+            setPolicy(latestPolicy);
+        };
+
+        fetchPolicy();
+    }, [locale]);
 
     return (
         <div className={styles.cookies}>
             <Header />
             <main className={styles.main}>
-                <h1 className={styles.title}>{t('title')}</h1>
-                <div >
-                    <p className={styles.contentText}>{t('content')}</p>
+                <h1>{t('title')}</h1>
+                <div className={styles.content}>
+                    <p className={styles.contentText}>{policy}</p>
                     <div className={styles.contactButtons}>
                         <a 
                             href="mailto:example@user.com?subject=Cookies Policy Inquiry"
                             className={styles.contactButton}
                         >
-                            hello@covo.so
+                            example@user.com
                         </a>
                         <a 
                             href="tel:+362423324234"
