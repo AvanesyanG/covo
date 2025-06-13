@@ -66,6 +66,13 @@
     .services{
         margin-top:100px;
     }
+    .sectionTitle {
+        margin-top: 60px;
+        margin-bottom:50px;
+    }
+    .sectionTitle p:nth-child(1){
+        margin-bottom:20px;
+    }
     .sectionTitle p:nth-child(2){
         font-size:50px;
     }
@@ -86,5 +93,11 @@
     }
     .alignRight {
         margin-top:0
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .sectionTitle p:nth-child(2) {
+        font-size: 40px;
     }
   }

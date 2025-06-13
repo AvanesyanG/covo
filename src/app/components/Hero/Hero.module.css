@@ -33,7 +33,7 @@
 }
 
 .titleText {
-    width: 363px;
+    max-width: 363px;
     font-size: 60px;
     font-weight: 600;
     line-height: 65px;

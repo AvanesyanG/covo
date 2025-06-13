@@ -50,6 +50,7 @@
 @media screen and (max-width: 800px) {
     .header {
         font-size: 14px;
+        margin-bottom: 50px;
     }
     .teamContent {
         flex-direction: column;
