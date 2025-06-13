@@ -5,6 +5,27 @@
     padding: 0 15px;
     margin-bottom: 70px;
 }
+.formReady input,
+.formReady textarea {
+  border-color: rgba(109, 109, 109, 1) !important;
+  color: rgba(109, 109, 109, 1) !important;
+}
+
+.formReady input:focus,
+.formReady textarea:focus {
+  border-color: rgba(109, 109, 109, 1) !important;
+  color: rgba(109, 109, 109, 1) !important;
+}
+
+.formReady input[type="checkbox"] {
+  accent-color: rgba(109, 109, 109, 1) !important; /* For modern browsers */
+  border-color: rgba(109, 109, 109, 1) !important;
+}
+
+.formReady label,
+.formReady .checkboxLabel {
+  color: rgba(109, 109, 109, 1) !important;
+}
 .header {
     font-weight: 500;
     font-size: 19px;
@@ -35,7 +56,7 @@
 .rightColumn {
     display: flex;
     flex-direction: column;
-    gap: 43px;
+    gap: 38px;
     flex: 1;
 }
 

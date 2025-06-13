@@ -93,7 +93,10 @@ function Form() {
                 <h2 className={styles.header}>{t('title')}</h2>
                 <p className={styles.note}>{t('note')}</p>
             </div>
-            <form className={styles.formContainer} onSubmit={handleSubmit}>
+            <form
+                className={`${styles.formContainer} ${readyForAnother ? styles.formReady : ''}`}
+                onSubmit={handleSubmit}
+            >
                 <div className={styles.leftColumn}>
                     <div className={styles.inputGroup}>
                         <input 
@@ -175,7 +178,7 @@ function Form() {
                             className={`${styles.submitButton} ${styles.submitButtonReady}`}
                             onClick={handleReset}
                         >
-                            Готово, ещё?
+                            {t('readyForAnother')}
                         </button>
                     ) : (
                         <button
