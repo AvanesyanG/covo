@@ -142,6 +142,7 @@
 .checkbox {
     width: 24px;
     height: 24px;
+    flex-shrink: 0;
     accent-color: #BAFFC9;
     border-radius: 8px;
     background: transparent;

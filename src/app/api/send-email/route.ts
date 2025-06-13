@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   // Compose email
   const mailOptions = {
     from: '"Covo Form" <feedback@covo.so>',
-    to: 'garavanes1@gmail.com',
+    to: 'hello@covo.so',
     subject: 'New Form Submission',
     html: `
       <h2>New Form Submission</h2>
@@ -35,6 +35,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Email send error:', error);
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    return NextResponse.json({ success: false, error: errorMessage }, { status: 500 });
   }
 }
