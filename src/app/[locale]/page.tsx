@@ -20,7 +20,7 @@ export default function Home() {
       <section id="contact-form">
         <Form />
       </section>
-<img
+{/* <img
     src="/Landing.png"
     alt="Design Overlay"
     style={{
@@ -33,7 +33,7 @@ export default function Home() {
       pointerEvents: 'none',
       zIndex: 10,
     }}
-  />   
+  />    */}
   </main>
   );
 }
