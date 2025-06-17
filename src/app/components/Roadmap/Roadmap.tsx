@@ -13,7 +13,11 @@ function Roadmap() {
                 {isGray && <img src="/time.svg" alt="time" />}
             </div>
             <div className={`${styles[`${type}LineContent`]} ${isGray ? styles.grayText : ''}`}>
-                <p>{t(`items.${key}`)}</p>
+                {t(`items.${key}`)
+                    .split('\n')
+                    .map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                ))}
             </div>
         </div>
     );

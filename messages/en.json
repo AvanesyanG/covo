@@ -88,14 +88,14 @@
     "Roadmap": {
       "title": "roadmap",
       "items": {
-        "employee": "employee personal account, profile",
-        "news": "news feed and communities",
+        "employee": "employee personal\naccount, profile",
+        "news": "news feed\nand communities",
         "booking": "booking",
-        "integration": "email and calendar integration",
-        "storage": "cloud storage for files",
-        "documents": "document and certificate requests",
-        "monitoring": "AI-powered employee sentiment monitoring",
-        "salary": "salary slip viewing"
+        "integration": "email and calendar\nintegration",
+        "storage": "cloud storage\nfor files",
+        "documents": "document and\ncertificate requests",
+        "monitoring": "AI-powered employee\nsentiment monitoring",
+        "salary": "salary\nslip viewing"
       }
     },
     "Team": {

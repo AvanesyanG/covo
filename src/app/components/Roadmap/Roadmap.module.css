@@ -86,9 +86,8 @@
     /* Adjust distance from the vertical line */
     top: 0;
     /* Position near the top for upLineItem */
-    max-width: 200px;
     color: white;
-    width: 200px;
+    width: 300px;
 }
 
 
@@ -98,9 +97,8 @@
     /* Same horizontal offset */
     bottom: 0;
     /* Position near the bottom for downLineItem */
-    max-width: 200px;
     color: rgb(255, 255, 255);
-    width: 160px;
+    width: 300px;
 }
 
 
@@ -111,6 +109,7 @@
     font-size: 17px;
     line-height: 150%;
     font-weight: 400;
+    width: 100%;
 }
 
 .gray {

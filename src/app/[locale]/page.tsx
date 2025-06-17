@@ -17,7 +17,7 @@ export default function Home() {
       <Services/>
       <Roadmap />
       <Team />
-      <section id="contact-form">
+      <section style={{width: '100%', display: 'flex', justifyContent: 'center'}} id="contact-form">
         <Form />
       </section>
 {/* <img

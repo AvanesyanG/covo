@@ -14,22 +14,22 @@ function Services () {
             </div>
             <div className={styles.grid}>
                 <div className={`${styles.serviceItem} ${styles.alignLeft}`}>
-                    <img src="/img1.svg" alt="img1" />
+                    <img src={`/${sectionKey}-img1.svg`} alt="img1" />
                     <p className={styles.itemTitle}>{t(`sections.${sectionKey}.items.profile.title`)}</p>
                     <p className={styles.itemDesc}>{t(`sections.${sectionKey}.items.profile.description`)}</p>
                 </div>
                 <div className={`${styles.serviceItem} ${styles.alignRight}`}>
-                    <img src="/img2.svg" alt="img2" />
+                    <img src={`/${sectionKey}-img2.svg`} alt="img2" />
                     <p className={styles.itemTitle}>{t(`sections.${sectionKey}.items.calendar.title`)}</p>
                     <p className={styles.itemDesc}>{t(`sections.${sectionKey}.items.calendar.description`)}</p>
                 </div>
                 <div className={`${styles.serviceItem} ${styles.alignLeft}`}>
-                    <img src="/img3.svg" alt="img3" />
+                    <img src={`/${sectionKey}-img3.svg`} alt="img3" />
                     <p className={styles.itemTitle}>{t(`sections.${sectionKey}.items.awards.title`)}</p>
                     <p className={styles.itemDesc}>{t(`sections.${sectionKey}.items.awards.description`)}</p>
                 </div>
                 <div className={`${styles.serviceItem} ${styles.alignRight}`}>
-                    <img src="/img4.svg" alt="img4" />
+                    <img src={`/${sectionKey}-img4.svg`} alt="img4" />
                     <p className={styles.itemTitle}>{t(`sections.${sectionKey}.items.integration.title`)}</p>
                     <p className={styles.itemDesc}>{t(`sections.${sectionKey}.items.integration.description`)}</p>
                 </div>
