@@ -1,62 +1,65 @@
 .advantages {
     display: flex;
     flex-direction: column;
-    max-width:1054px;
+    max-width: 990px;
     width: 100%;
-    margin-top:83px;
-    color:white;
+    margin-top: 82px;
+    color: white;
     padding: 0 15px;
 }
 .header{
     font-weight: 500;
     font-size: 19px;
-    line-height:120%;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.6px;
+    padding-left: 3px;
 }
-
 
 .advantages div {
     display: flex;
-    align-items: start;
-    
-    
-    
+    align-items: start; 
 }
+
 .advantages > div:nth-child(2) {
     align-self: flex-start;
-    margin-top: 98px;
+    margin-top: 75px;
+    margin-left: 3px;
 }
 
 .advantages > div:nth-child(3) {
     align-self: center;
-    margin-top: 168px;
+    margin-top: 78px;
+    margin-left: 3px;
 }
 
 .advantages > div:nth-child(4) {
     align-self: flex-end;
-    margin-top: 219px;
+    margin-top: 90px;
 }
 
 .advantages > div:nth-child(5) {
     align-self: flex-start;
-    margin-top: 167px;
+    margin-top: 76px;
+    margin-left: 2px;
 }
 
 .advantages > div:nth-child(6) {
     align-self: center;
-    margin-top: 207px;
+    margin-top: 77px;
+    margin-left: 3px;
 }
 
 .advantages div p {
     flex: 1; /* Allow text to take remaining space */
     min-width: 0; /* Allow text to shrink below its content size */
     word-wrap: break-word;
-    max-width:400px;
+    max-width: 330px;
     font-weight:500;
     font-size:28px;
     line-height:40px;
-    margin-left:141px;
+    margin-left: 61px;
+    margin-top: 10px;
 }
+
 .advantages div img {
     flex-shrink: 0; /* Prevent image from shrinking */
 }

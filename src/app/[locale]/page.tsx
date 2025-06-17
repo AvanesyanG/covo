@@ -10,7 +10,7 @@ import Form from '../components/Form/Form';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main style={{position: 'relative'}} className={styles.main}>
       <Header/>
       <Hero/>
       <Advantages/>
@@ -20,6 +20,20 @@ export default function Home() {
       <section id="contact-form">
         <Form />
       </section>
-    </main>
+<img
+    src="/Landing.png"
+    alt="Design Overlay"
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: 'auto',
+      opacity: 0.5,
+      pointerEvents: 'none',
+      zIndex: 10,
+    }}
+  />   
+  </main>
   );
 }

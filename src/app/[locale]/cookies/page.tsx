@@ -12,14 +12,17 @@ export default function Cookies() {
     const [policy, setPolicy] = useState<string | null>(null);
     const locale = useLocale();
 
+    // Ensure locale is 'en' or 'ru'
+    const typedLocale = (locale === 'en' || locale === 'ru' ? locale : 'en') as 'en' | 'ru';
+
     useEffect(() => {
         const fetchPolicy = async () => {
-            const latestPolicy = await getPolicy('cookies', locale);
+            const latestPolicy = await getPolicy('cookies', typedLocale);
             setPolicy(latestPolicy);
         };
 
         fetchPolicy();
-    }, [locale]);
+    }, [typedLocale]);
 
     return (
         <div className={styles.cookies}>

@@ -2,6 +2,7 @@
 
 import styles from "./Advantages.module.css"
 import { useTranslations } from "next-intl";
+import { Fragment } from "react";
 
 function Advantages () {
     const t = useTranslations("Advantages");

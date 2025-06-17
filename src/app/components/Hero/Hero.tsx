@@ -3,6 +3,7 @@
 import styles from "./Hero.module.css";
 import TestButton from "../Button/TestButton";
 import { useTranslations } from "next-intl";
+import { Fragment } from "react";
 
 function Hero() {
   const t = useTranslations("Hero");
@@ -24,7 +25,14 @@ function Hero() {
         <TestButton onClick={handleScrollToForm} />
       </div>
       <div className={styles.heroText}>
-        <p>{t('description')}</p>
+        <p>
+          {t('description').split('\n').map((line, i) => (
+            <Fragment key={i}>
+              {line}
+              <br />
+            </Fragment>
+          ))}
+        </p>
       </div>
     </section>
   );

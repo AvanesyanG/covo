@@ -5,7 +5,6 @@ import styles from './privacy.module.css';
 import Header from '../../components/Header/Header';
 import { useTranslations } from 'next-intl';
 import { getPolicy } from '../../lib/supabase';
-import { Policy } from '../../types/database.types';
 import { useLocale } from 'next-intl';
 
 export default function Privacy() {
@@ -15,7 +14,9 @@ export default function Privacy() {
 
     useEffect(() => {
         const fetchPolicy = async () => {
-            const latestPolicy = await getPolicy('privacy', locale);
+            // Ensure locale is 'en' or 'ru'
+            const typedLocale = (locale === 'en' || locale === 'ru' ? locale : 'en') as 'en' | 'ru';
+            const latestPolicy = await getPolicy('privacy', typedLocale);
             setPolicy(latestPolicy);
         };
         fetchPolicy();

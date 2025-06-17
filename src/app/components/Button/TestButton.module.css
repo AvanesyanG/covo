@@ -2,9 +2,6 @@
     width: 284px;
     height: 54px;
     border-radius: 16px;
-    font-weight: 500;
-    font-size:19px;
-    letter-spacing: 0.1em;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -12,6 +9,11 @@
     z-index: 1;
     border:none;
     overflow-y: hidden;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 40px;
+    letter-spacing: 0.7px;
 }
 
 .testButton::before {

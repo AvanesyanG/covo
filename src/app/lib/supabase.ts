@@ -5,31 +5,44 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 export const supabase = createClient(supabaseUrl, supabaseKey);
 
-export interface Policy {
-    id: number;
-    content: string;
-    created_at: string;
+interface PoliciesTable {
+  id: number;
+  created_at: string;
+  personal_info_policy_en: string;
+  personal_info_policy_ru: string;
+  cookies_usage_en: string;
+  cookies_usage_ru: string;
 }
 
-export async function getPolicy(type: 'privacy' | 'cookies', locale: string): Promise<string | null> {
-    let column = '';
-    if (type === 'privacy') {
-        column = locale === 'en' ? 'personal_info_policy_en' : 'personal_info_policy_ru';
-    } else if (type === 'cookies') {
-        column = locale === 'en' ? 'cookies_usage_en' : 'cookies_usage_ru';
-    }
+export async function getPolicy(
+  type: 'privacy' | 'cookies',
+  locale: 'en' | 'ru'
+): Promise<string | null> {
+  const columnMap: Record<'privacy' | 'cookies', Record<'en' | 'ru', keyof PoliciesTable>> = {
+    privacy: {
+      en: 'personal_info_policy_en',
+      ru: 'personal_info_policy_ru',
+    },
+    cookies: {
+      en: 'cookies_usage_en',
+      ru: 'cookies_usage_ru',
+    },
+  };
 
-    const { data, error } = await supabase
-        .from('policies')
-        .select(column)
-        .order('id', { ascending: false })
-        .limit(1)
-        .single();
+  const column = columnMap[type][locale];
 
-    if (error) {
-        console.error(`[getPolicy] Error fetching ${type} policy:`, error);
-        return null;
-    }
+  // Указываем тип результата через generic в select()
+  const { data, error } = await supabase
+    .from('policies')
+    .select(column)
+    .order('id', { ascending: false })
+    .limit(1)
+    .single<{ [key in keyof Pick<PoliciesTable, typeof column>]: string }>();
 
-    return data ? data[column] : null;
+  if (error) {
+    console.error(`[getPolicy] Error fetching ${type} policy:`, error);
+    return null;
+  }
+
+  return data ? data[column] : null;
 }

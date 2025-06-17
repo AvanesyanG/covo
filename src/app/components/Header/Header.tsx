@@ -39,13 +39,13 @@ function Header() {
             className={`${styles.headerButton} ${currentLocale === 'en' ? styles.active : ''}`}
             onClick={() => switchLanguage('en')}
           >
-            EN
+            en
           </button>
           <button 
             className={`${styles.headerButton} ${currentLocale === 'ru' ? styles.active : ''}`}
             onClick={() => switchLanguage('ru')}
           >
-            RU
+            ру
           </button>
         </div>
       </div>

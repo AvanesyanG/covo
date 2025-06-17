@@ -68,9 +68,14 @@ function Form() {
                 setStatus('error');
                 setErrorMsg(result.error || 'Unknown error');
             }
-        } catch (err: any) {
+        }catch (err) {
             setStatus('error');
-            setErrorMsg(err.message || 'Unknown error');
+            // We need to safely get `message` from unknown `err`
+            if (err instanceof Error) {
+                setErrorMsg(err.message);
+            } else {
+                setErrorMsg('Unknown error');
+            }
         }
     };
 
